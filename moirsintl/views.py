@@ -7,10 +7,10 @@ from .models import Product
 def index(request):
     latest_product_list = Product.objects.all()
     template = loader.get_template('moirsintl/product.html')
-    context = {
-        'latest_product_list': latest_product_list,
-    }
-    return render(request, 'moirsintl/product.html', context)
+    # context = {
+    #     'latest_product_list': latest_product_list,
+    # }
+    return render(request, 'moirsintl/product.html')
 
 def contact(request):
     template = loader.get_template('moirsintl/contact.html')
