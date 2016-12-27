@@ -1650,3 +1650,8 @@ ol li:before {
     width: 10px;
     height: 10px;
 }
+
+.intro{
+	text-align: justify;
+	line-height: 30px;
+}

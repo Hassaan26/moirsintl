@@ -2,8 +2,6 @@
 {% block nav_home %}active{% endblock %}
 {% load static from staticfiles %}
 
-
-
 {% block content %}
 
 
@@ -14,7 +12,6 @@
         <ul class="slides" style="margin-top: -16px;">
           <li>
             <img src="{% static 'img/3.jpg' %}" alt="" />
-          
           </li>
           <li>
             <img src="{% static 'img/office3.jpg' %}" alt="" />
@@ -33,29 +30,23 @@
         </ul>
     </div>
 	<!-- end slider -->
- 
 </section>
 <section class="callaction">
 	<div class="container">
 		<div class="row">
-		<!-- <div class="col-md-4">
-		<img src="img/people.png" alt="" width="100%"/>
-		</div> -->
 			<div class="col-md-12">
-				<div><h1><span class="blue_text">Introduction</span></h1><span class="clear spacer_responsive_hide_mobile " style="height:13px;display:block;"></span><p>Established since 2010, Moirs International specializes in the provision of cost effective products and services among others all over Pakistan. We focus on delivering quality products specific to the client's requirements. 
-With business experience and an ongoing relationship with well-established companies, our staffs have worked with business leading companies to acquire an in depth understanding of the latest technologies and processes. Moirs International is a one stop shop for your industrial needs.  </p> <br />
-<p>The company is committed to continuous development of competence in an endeavor to evaluate and sustaining competitiveness at national and international level. 
-As a business organization Moirs International has the ambition to become a leader in business in counterpoised by immense responsibility of actively participating in the development of the community. That is indeed our vision. We want to become a vital player in the advancement of business opportunities in Pakistan.</p> 
-
-
-				
+				<div>
+					<h2>
+						<span class="blue_text">Introduction</span>
+					</h2>
+					<span class="clear spacer_responsive_hide_mobile " style="height:13px;display:block;">
+					</span>
+					<p class="intro">{{ details }}</p> 
 				</div>
 			</div>
-		
 		</div>
-		
 	</div>
-	</section>
+</section>
 
 
 {% endblock %}
