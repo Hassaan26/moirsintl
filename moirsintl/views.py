@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.template import loader
 from django.template import context
 # Create your views here.
-from .models import Product, CompanyIntro, Service, ServiceDetail
+from .models import Product, CompanyIntro, Service, ServiceDetail, Client
 
 
 def index(request):
@@ -21,7 +21,9 @@ def about(request):
 
 def clients(request):
     template = loader.get_template('moirsintl/clients.html')
-    return render(request, 'moirsintl/clients.html')
+    cl_detail = Client.objects.all()[0]
+    context = {'cl_detail' : cl_detail}
+    return render(request, 'moirsintl/clients.html', context)
 
 def services(request):
     service = Service.objects.all()

@@ -47,3 +47,16 @@ class ServiceDetail(models.Model):
 
     def __str__(self):
         return '{}'.format(self.service_detail)
+
+
+class Client(models.Model):
+    client_detail = models.TextField(max_length=20000, verbose_name=_("Client Detail"))
+    class Meta:
+        verbose_name = "Client Detail"
+        verbose_name_plural = _("Client Detail")
+
+    def __unicode__(self):
+        return _(u'%s') % self.client_detail
+
+    def __str__(self):
+        return '{}'.format(self.client_detail)
