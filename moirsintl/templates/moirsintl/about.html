@@ -15,59 +15,46 @@
 			</div>
 		</div>
 	</div>
-	</section>
-	<section id="content">
+</section>
+<section id="content">
 	<div class="container">
-					
-					<div class="about">
-					
-						<div class="row"> 
-							<div class="col-md-12">
-								<div class="about-logo">
-									<!-- <h3>About Us</h3> -->
-									<p class="team">
-										Established since 2010, Moirs International specializes in the provision of cost effective products and services among others all over Pakistan. We focus on delivering quality products specific to the client's requirements. 
-With business experience and an ongoing relationship with well-established companies, our staffs have worked with business leading companies to acquire an in depth understanding of the latest technologies and processes. Moirs International is a one stop shop for your industrial needs. 
+		{% for item in abt %}
+		<div class="about">
+			<div class="row"> 
+				<div class="col-md-12">
+					<div class="about-logo">
+						<p class="team intro">	
+							{{ item.about_detail }}
+						</p>
+					</div>
+				</div>
+			</div>
 
-									</p>
-								</div>
-								<!-- <a href="#" class="btn btn-color">Read more</a>   -->
-							</div>
-						</div>
-			
-						
-						<div class="row">
-							<div class="col-md-12">
-								<!-- Heading and para -->
-								<div class="block-heading-two">
-									<h3><span>Why Choose Us?</span></h3>
-								</div>
-								<p class="team">Moirs International strives to employ personnel of skill, integrity and enthusiasm, and provide them with the opportunities to be exposed to different technological challenges. Armed with this unique combination of strengths, we are confident that we can supply any product and also offer services required by our customers. Our personnel have the strong technical background and relevant work experience to meet the customers' expectations. </p>
-							</div>
-							
-							
-							
-							
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<!-- Heading and para -->
-								<div class="block-heading-two">
-									<h3><span>Our Goals</span></h3>
-								</div>
-								<p class="team">We do not endorse the traditional concept of simply satisfying the customers, we delight our customers by providing more than they expect. 
-									As a company, and as individuals, we value integrity, honesty, openness, personal excellence, constructive self-criticism, continual self-improvement, and mutual respect
-										<p>We are committed to our customers</p>
-										<p>We take on big challenges, and pride ourselves on seeing them through</p>
-										<p>We hold ourselves accountable to our customers by honoring our commitments, providing results, and striving for the highest quality
- 										</p>
-							</div>
-							
-							
-							
-							
-						</div>
-
-	</section>
+			<div class="row">
+				<div class="col-md-12">
+					<!-- Heading and para -->
+					<div class="block-heading-two">
+						<h3><span>Why Choose Us?</span></h3>
+					</div>
+					<p class="team intro">
+						{{ item.about_choose }}
+					</p>
+				</div>				
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<!-- Heading and para -->
+					<div class="block-heading-two">
+						<h3><span>Our Goals</span></h3>
+					</div>
+					<p class="team intro">
+						{{ item.about_goal }}
+					</p>
+				</div>	
+			</div>
+			{% endfor %}
+		</div>
+	</div>	
+</section>
 
 {% endblock %}

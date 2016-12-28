@@ -60,3 +60,18 @@ class Client(models.Model):
 
     def __str__(self):
         return '{}'.format(self.client_detail)
+
+
+class About(models.Model):
+    about_detail = models.TextField(max_length=20000, verbose_name=_("About Detail"))
+    about_choose = models.TextField(max_length=20000, verbose_name=_("Choose Detail"))
+    about_goal = models.TextField(max_length=20000, verbose_name=_("Goals"))
+    class Meta:
+        verbose_name = "About Detail"
+        verbose_name_plural = _("About Detail")
+
+    def __unicode__(self):
+        return _(u'%s') % self.about_detail
+
+    def __str__(self):
+        return '{}'.format(self.about_detail)
