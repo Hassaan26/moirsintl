@@ -1,1 +1,1 @@
-gunicorn  moirs:application -b xx.xxx.xxx.xx:8000
+web: gunicorn moirs.wsgi --log-file -
