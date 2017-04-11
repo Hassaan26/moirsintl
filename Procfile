@@ -1,1 +1,1 @@
-web: gunicorn --log-file=- moirs.wsgi:application
+web: gunicorn --preload --log-file=- moirs.wsgi:application
