@@ -1,1 +1,1 @@
-web: gunicorn moirs.wsgi --log-file -
+web: gunicorn --log-file=- moirs.wsgi:application
