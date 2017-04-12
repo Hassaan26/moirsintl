@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^', include('moirsintl.urls')),
     # url(r'^', include('company.urls')),
     url(r'^_admin__/', include(admin.site.urls)),
+    url(r'^accounts/', include('registration.backends.hmac.urls')),
 ]
