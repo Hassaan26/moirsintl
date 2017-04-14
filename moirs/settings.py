@@ -95,10 +95,13 @@ DATABASES = {
     }
 }
 
-DATABASES = {
-    'default': dj_database_url.config()
-}
 
+db_config = dj_database_url.config()
+if db_config:
+    DATABASES['default'] =  db_config
+DATABASES['default'] =  dj_database_url.config()
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
@@ -118,7 +121,7 @@ USE_TZ = True
 
 
 STATICFILES_DIRS = (
-  os.path.join(BASE_DIR, "moirs/static"),
+  os.path.join(BASE_DIR, "static"),
 )
 
 

@@ -5,3 +5,4 @@ wheel==0.24.0
 gunicorn
 django-registration==2.2
 dj_database_url
+whitenoise==3.3.0
