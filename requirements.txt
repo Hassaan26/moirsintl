@@ -4,3 +4,4 @@ psycopg2==2.6.1
 wheel==0.24.0
 gunicorn
 django-registration==2.2
+dj_database_url
