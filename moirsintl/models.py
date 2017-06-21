@@ -8,6 +8,14 @@ class Product(models.Model):
     product_description = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
     product_status = models.BooleanField(default=True)
+    class Meta:
+        verbose_name = "Product"
+        verbose_name_plural = _("Product")
+    def __unicode__(self):
+        return _(u'%s') % self.product_name
+
+    def __str__(self):
+        return '{}'.format(self.product_name)
 
 class CompanyIntro(models.Model):
     company_intro = models.TextField(max_length=20000, verbose_name=_("Company Detail"))
