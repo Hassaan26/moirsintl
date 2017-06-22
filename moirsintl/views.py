@@ -6,10 +6,10 @@ from .models import Product, CompanyIntro, Service, ServiceDetail, Client, About
 
 
 def index(request):
-    template = loader.get_template('moirsintl/product.html')
+    template = loader.get_template('moirsintl/introduction.html')
     details = CompanyIntro.objects.all()[0]
     context = {'details': details}
-    return render(request, 'moirsintl/product.html', context)
+    return render(request, 'moirsintl/introduction.html', context)
 
 def contact(request):
     template = loader.get_template('moirsintl/contact.html')
@@ -33,4 +33,11 @@ def services(request):
     template = loader.get_template('moirsintl/services.html')
     context = { 'service' : service , 'ser_detail': ser_detail }
     return render(request, 'moirsintl/services.html', context)
+
+
+def products(request):
+    product = Product.objects.all()
+    template = loader.get_template('moirsintl/product.html')
+    context = { 'product' : product }
+    return render(request, 'moirsintl/product.html', context)
     

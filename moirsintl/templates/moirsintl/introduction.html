@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block nav_home %}active{% endblock %}
+{% load static from staticfiles %}
+
+{% block content %}
+
+
+<section id="featured">
+	 
+	<!-- Slider -->
+    <div id="main-slider" class="flexslider">
+        <ul class="slides" style="margin-top: -16px;">
+          <li>
+            <img src="{% static 'img/3.jpg' %}" alt="" />
+          </li>
+          <li>
+            <img src="{% static 'img/office3.jpg' %}" alt="" />
+            <!-- <div class="flex-caption">
+                <h3>Fully Responsive</h3> 
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elitincidunt eius magni provident.</p> 
+            </div> -->
+          </li>
+          <li>
+            <img src="{% static 'img/office4.jpg' %}" alt="" />
+           <!--  <div class="flex-caption">
+                <h3>Multi-purpose Theme</h3> 
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit donec mer lacinia.</p>  
+            </div> -->
+          </li>
+        </ul>
+    </div>
+	<!-- end slider -->
+</section>
+<section class="callaction">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div>
+					<h2>
+						<span class="blue_text">Introduction</span>
+					</h2>
+					<span class="clear spacer_responsive_hide_mobile " style="height:13px;display:block;">
+					</span>
+					<p class="intro">{{ details }}</p> 
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+{% endblock %}
