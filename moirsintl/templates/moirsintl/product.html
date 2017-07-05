@@ -1,32 +1,148 @@
 {% extends "base.html" %}
-{% block nav_product %}active{% endblock %}
 {% load static from staticfiles %}
-
-
-
 {% block content %}
+<!--==========================
+  Hero Section
+============================-->
+<section id="hero">
+  <div class="hero-container">
+    <div class="wow fadeIn">
+      <div class="hero-logo">
+        <a href="{% url 'index' %}">
+        	<h1>Moirs International</h1>
+        </a>
+      </div>
+      <div class="actions">
+        <a href="" class="btn-get-started">Get Strated</a>
+        <a href="" class="btn-services">Our Services</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-<title>{% block title %}Clients{% endblock %}</title>
-	<section id="inner-headline">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<h2 class="pageTitle">Our Products</h2>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section id="content">
-		<div class="container">
-			{% if product %}
-				{% for pro in product %}
-					{{ pro.product_name }}
-				{% endfor %}
-			{% else %}
-				<div>No Products</div>
-			{% endif %}
-		</div>
-	</section>
-
-
+<!--==========================
+  Header Section
+============================-->
+<header id="header">
+  <div class="container">  
+    <div id="logo" class="pull-left">
+      <a href="#hero"><img src="{% static 'img/MI-logo.png' %}" alt="" title="" /></img></a>
+      <!-- Uncomment below if you prefer to use a text image -->
+      <!-- <h3><a href="#hero">Moirs International</a></h3> -->
+    </div>
+      
+    <nav id="nav-menu-container">
+      <ul class="nav-menu">
+        <li class="menu-active"><a href="{% url 'index' %}">Home</a></li>
+        <!--<li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#team">Team</a></li>
+         <li class="menu-has-children"><a href="">Drop Down</a>
+          <ul>
+            <li><a href="#">Drop Down 1</a></li>
+            <li class="menu-has-children"><a href="#">Drop Down 2</a>
+              <ul>
+                <li><a href="#">Deep Drop Down 1</a></li>
+                <li><a href="#">Deep Drop Down 2</a></li>
+                <li><a href="#">Deep Drop Down 3</a></li>
+                <li><a href="#">Deep Drop Down 4</a></li>
+                <li><a href="#">Deep Drop Down 5</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Drop Down 3</a></li>
+            <li><a href="#">Drop Down 4</a></li>
+            <li><a href="#">Drop Down 5</a></li>
+          </ul>
+        </li> -->
+        <li><a href="{% url 'product' %}">Shop</a></li>
+      </ul>
+    </nav><!-- #nav-menu-container -->
+  </div>
+</header><!-- #header -->
+<!--==========================
+  About Section
+============================-->
+<section id="about">
+  <div class="container wow fadeInUp">
+    <div class="row">
+      <div class="col-md-12">
+        {% if product %}
+			{% for pro in product %}
+				{{ pro.product_name }}
+				{{ pro.product_description }}
+				{{ pro.product_img.url }}
+			{% endfor %}
+		{% else %}
+			<div>No Products</div>
+		{% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+ 
+    
+<!--==========================
+  Contact Section
+============================--> 
+<section id="contact">
+  <div class="container wow fadeInUp">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="section-title">Contact Us</h3>
+        <div class="section-title-divider"></div>
+        <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-3 col-md-push-2">
+        <div class="info">
+          <div>
+            <i class="fa fa-map-marker"></i>
+            <p>Lahore, Pakistan</p>
+          </div>
+          
+          <div>
+            <i class="fa fa-envelope"></i>
+            <p>info@moirsintl.com</p>
+          </div>
+          
+          <div>
+            <i class="fa fa-phone"></i>
+            <p>+92-320-8422450 </p>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="col-md-5 col-md-push-2">
+        <div class="form">
+          <div id="sendmessage">Your message has been sent. Thank you!</div>
+          <div id="errormessage"></div>
+          <form action="" method="post" role="form" class="contactForm">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validation"></div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+  
 {% endblock %}
